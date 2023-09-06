@@ -14,24 +14,27 @@ db.once('open', function(){
 
     });
 
-    const pessoaSchema = new mongoose.Schema({
-        nome : String,
-        idade : Number,
-        profissao : String 
+    const produtoSchema = new mongoose.Schema({
+        descrição : String,
+        ano : Number,
+        valor : Number,
+        estoque : Number
     });
 
-    const Pessoa = mongoose.model("Pessoa", pessoaSchema);
+    const Produto = mongoose.model("Produto", produtoSchema);
 
-const marcos = new Pessoa({
-    nome : 'Marcos',
-    idade : 25,
-    profissao : 'Jogador'
+const Livro = new Livro({
+    descriçao : 'Livro de granada',
+        ano : 2009,
+        valor : 99,
+        estoque : 5
 })
 
-console.log(marcos.nome)
-console.log(marcos.idade)
-console.log(marcos.profissao)
-marcos.save();
+console.log(Livro.descriçao)
+console.log(Livro.ano)
+console.log(Livro.valor)
+console.log(Livro.estoque)
+Livro.save();
 
 const cu = new Pessoa({
     nome : 'cu',
